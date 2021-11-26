@@ -5,6 +5,7 @@ import { menuOrders, OrdersModel } from './orders.models';
 import { CadOrdersService } from './orders.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { UsuarioModel } from '../core/models/usuario.model';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-orders',
@@ -91,6 +92,8 @@ buscarId(): void {
 
      // PEGAR O VALOR DO FORMULARIO (<HTMLInputElement>document.getElementById('1')).value;
     (<HTMLInputElement>document.getElementById('usrName')).value = res["name"];
+    (<HTMLInputElement>document.getElementById('clientId')).value = res["id"];
+
 
     console.warn(res);
 
@@ -102,7 +105,23 @@ buscarId(): void {
     //this.toastr.error(err.error.errors, '');
   });
 
-  alert("Fui clicado e o valor do input é: " + this.idBuscado)
+
+}
+buscarFunc(){
+
+
+       // PEGAR O VALOR DO FORMULARIO (<HTMLInputElement>document.getElementById('1')).value;
+      (<HTMLInputElement>document.getElementById('funcName')).value = 'Jonathan Da Cruz';
+      (<HTMLInputElement>document.getElementById('funcId')).value = '7';
+
+}
+buscarCardapio(){
+
+
+  // PEGAR O VALOR DO FORMULARIO (<HTMLInputElement>document.getElementById('1')).value;
+ (<HTMLInputElement>document.getElementById('carName')).value = 'Coca cola 350 ml';
+ (<HTMLInputElement>document.getElementById('carId')).value = '1';
+
 }
 
 }

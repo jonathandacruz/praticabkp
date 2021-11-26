@@ -32,8 +32,8 @@
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width">
-                    <mat-label>Cliente</mat-label>
-                    <input  matInput formControlName="clientId" type="number" required>
+                    <mat-label>Código Cliente</mat-label>
+                    <input id="clientId" matInput formControlName="clientId" type="number" required>
                     <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngIf="frmOrders.get('clientId').hasError('required')">
                       CLiente é obrigatório
@@ -49,25 +49,19 @@
                   <mat-form-field  class="example-full-width">
                     <mat-label>Cliente</mat-label>
                     <input matInput id="usrName" type="text">
+                    <mat-icon matSuffix>email</mat-icon>
+                  </mat-form-field>
                     <a mat-menu-item (click)="buscarId()" >
                       <span>Buscar Cliente</span>
                     </a>
-                    <mat-icon matSuffix>email</mat-icon>
-
-
-                  </mat-form-field>
                 </div>
               </div>
-
-
-
-
 
               <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
                   <mat-form-field class="example-full-width">
-                    <mat-label>Funcionário</mat-label>
-                    <input matInput formControlName="employeeId" type="number" required>
+                    <mat-label>Código Funcionário </mat-label>
+                    <input id="funcId" matInput formControlName="employeeId" type="number" required>
                     <mat-icon matSuffix>email</mat-icon>
                     <mat-error *ngIf="frmOrders.get('employeeId').hasError('required')">
                       CLiente é obrigatório
@@ -75,6 +69,20 @@
                   </mat-form-field>
                 </div>
               </div>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field  class="example-full-width">
+                    <mat-label>Funcionário</mat-label>
+                    <input matInput id="funcName" type="text">
+                    <mat-icon matSuffix>email</mat-icon>
+                  </mat-form-field>
+                    <a mat-menu-item (click)="buscarFunc()" >
+                      <span>Buscar Funcionário</span>
+                    </a>
+                </div>
+              </div>
+
 
 
               <div class="row">
@@ -103,12 +111,27 @@
                   <div class="row" [formGroup]="menuForm">
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
                       <mat-form-field class="example-full-width">
-                        <mat-label>Cardápio</mat-label>
-                        <input matInput formControlName="menuId" type="number" required>
+                        <mat-label>Cardápio Identificador</mat-label>
+                        <input id="carId" matInput formControlName="menuId" type="number" required>
                         <mat-icon matSuffix>email</mat-icon>
 
                       </mat-form-field>
                     </div>
+
+
+                      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                        <mat-form-field  class="example-full-width">
+                          <mat-label>Cardápio Nome</mat-label>
+                          <input matInput id="carName" type="text">
+                          <mat-icon matSuffix>email</mat-icon>
+                        </mat-form-field>
+                          <a mat-menu-item (click)="buscarCardapio()" >
+                            <span>Buscar Cardápio</span>
+                          </a>
+                      </div>
+
+
+
                     <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
                       <mat-form-field class="example-full-width">
                         <mat-label>Quantidade</mat-label>
