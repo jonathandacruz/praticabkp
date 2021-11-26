@@ -1,0 +1,147 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Fazer novo Pedido</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/">
+                <i class="fas fa-home"></i> Pagina Inicial</a>
+            </li>
+            <li class="breadcrumb-item bcrumb-2">
+              <a href="#" onClick="return false;">Pedidos</a>
+            </li>
+            <li class="breadcrumb-item active">Novo Pedido</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row clearfix">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <div class="card">
+          <div class="header">
+            <h2>Fazer novo Pedido</h2>
+          </div>
+          <div class="body">
+            <form class="m-4" [formGroup]="frmOrders" (ngSubmit)="submit()">
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Cliente</mat-label>
+                    <input  matInput formControlName="clientId" type="number" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="frmOrders.get('clientId').hasError('required')">
+                      CLiente é obrigatório
+                    </mat-error>
+
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field  class="example-full-width">
+                    <mat-label>Cliente</mat-label>
+                    <input matInput id="usrName" type="text">
+                    <a mat-menu-item (click)="buscarId()" >
+                      <span>Buscar Cliente</span>
+                    </a>
+                    <mat-icon matSuffix>email</mat-icon>
+
+
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+
+
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Funcionário</mat-label>
+                    <input matInput formControlName="employeeId" type="number" required>
+                    <mat-icon matSuffix>email</mat-icon>
+                    <mat-error *ngIf="frmOrders.get('employeeId').hasError('required')">
+                      CLiente é obrigatório
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Restaurante</mat-label>
+                    <mat-select formControlName="restaurantId" type="number" required>
+                      <mat-option [value]="1">
+                        Shopping
+                      </mat-option>
+                      <mat-option [value]="2">
+                        Restaurante
+                      </mat-option>
+
+                    </mat-select>
+                    <mat-icon matSuffix>flag</mat-icon>
+                    <mat-error *ngIf="frmOrders.get('restaurantId').hasError('required')">
+                      Country is required
+                    </mat-error>
+                  </mat-form-field>
+                </div>
+              </div>
+
+              <div formArrayName="menuOrders">
+                <div container *ngFor="let menuForm of menuOrders.controls">
+                  <div class="row" [formGroup]="menuForm">
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Cardápio</mat-label>
+                        <input matInput formControlName="menuId" type="number" required>
+                        <mat-icon matSuffix>email</mat-icon>
+
+                      </mat-form-field>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2">
+                      <mat-form-field class="example-full-width">
+                        <mat-label>Quantidade</mat-label>
+                        <input matInput formControlName="quantity" type="number" required>
+                        <mat-icon matSuffix>email</mat-icon>
+
+                      </mat-form-field>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+              <button
+                id="btn"
+                class="col-xl-4 col-lg-4 col-md-12 col-sm-12 mb-2"
+                type="button"
+                mat-raised-button
+                color="primary"
+                (click)="addMenu()"
+              > Adicionar
+              </button>
+
+              <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-3">
+                  <button class="mr-3" [disabled]="!frmOrders.valid" mat-raised-button color="primary">Submit</button>
+                  <button type="button" mat-button>Cancel</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

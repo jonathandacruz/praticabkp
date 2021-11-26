@@ -1,0 +1,8 @@
+{
+  "/": {
+    "target": "https://restaurantes-pi2.herokuapp.com",
+    "secure": true,
+    "changeOrigin": true
+
+  }
+}

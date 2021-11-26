@@ -1,0 +1,297 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="block-header">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <ul class="breadcrumb breadcrumb-style ">
+            <li class="breadcrumb-item">
+              <h4 class="page-title">Dashboard</h4>
+            </li>
+            <li class="breadcrumb-item bcrumb-1">
+              <a routerLink="/dashboard/main">
+                <i class="fas fa-home"></i> Home</a>
+            </li>
+            <li class="breadcrumb-item active">Dashboard</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- Widgets -->
+    <div class="row">
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center">
+          <div class="text font-17 m-b-5">Total De Vendas</div>
+          <h3 class="m-b-10">R$758
+            <i class="material-icons col-green">trending_up</i>
+          </h3>
+          <div class="apex-chart-center">
+            <apx-chart [series]="smallBarChart.series" [chart]="smallBarChart.chart"
+              [plotOptions]="smallBarChart.plotOptions" [tooltip]="smallBarChart.tooltip">
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center">
+          <div class="text font-17 m-b-5">Total de Lucro</div>
+          <h3 class="m-b-10">R$1025
+            <i class="material-icons col-red">trending_up</i>
+          </h3>
+          <div class="apex-chart-center">
+            <apx-chart [series]="smallAreaChart.series" [chart]="smallAreaChart.chart" [stroke]="smallAreaChart.stroke"
+              [yaxis]="smallAreaChart.yaxis" [fill]="smallAreaChart.fill" [colors]="smallAreaChart.colors"></apx-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center">
+          <div class="text font-17 m-b-5">Total de Pedidos</div>
+          <h3 class="m-b-10">10
+            <i class="material-icons col-green">trending_up</i>
+          </h3>
+          <div class="apex-chart-center">
+            <apx-chart [series]="smallPieChart.series" [chart]="smallPieChart.chart" [labels]="smallPieChart.labels"
+              [responsive]="smallPieChart.responsive" [dataLabels]="smallPieChart.dataLabels"
+              [legend]="smallPieChart.legend">
+            </apx-chart>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3 col-sm-6">
+        <div class="counter-box text-center">
+          <div class="text font-17 m-b-5">Total Pedidos Abertos</div>
+          <h3 class="m-b-10">4
+            <i class="material-icons col-red">trending_down</i>
+          </h3>
+          <div class="apex-chart-center">
+            <apx-chart [series]="smallLineChart.series" [chart]="smallLineChart.chart" [stroke]="smallLineChart.stroke"
+              [tooltip]="smallLineChart.tooltip"></apx-chart>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- #END# Widgets -->
+    <div class="row clearfix">
+      <!-- Task Info -->
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+        <div class="card">
+          <div class="header">
+            <h2>
+              <strong>Pedidos </strong> Resumo</h2>
+            <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>Action</button>
+              <button mat-menu-item>Another action</button>
+              <button mat-menu-item>Something else here</button>
+            </mat-menu>
+          </div>
+          <div class="tableBody">
+            <div class="table-responsive">
+              <table class="table table-hover dashboard-task-infos">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Cliente</th>
+                    <th>Pedido</th>
+                    <th>Status</th>
+                    <th>Solicitação</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user1.jpg" alt="">
+                    </td>
+                    <td>Jonathan</td>
+                    <td>1223</td>
+                    <td>
+                      <span class="label bg-green shadow-style">Active</span>
+                    </td>
+                    <td>20/11/21 08:17</td>
+                    <td>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">mode_edit</i>
+                      </button>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user2.jpg" alt="">
+                    </td>
+                    <td>João Cleber</td>
+                    <td>5151</td>
+                    <td>
+                      <span class="label bg-green shadow-style">Active</span>
+                    </td>
+                    <td>20/11/21 08:17</td>
+                    <td>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">mode_edit</i>
+                      </button>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user3.jpg" alt="">
+                    </td>
+                    <td>Ari Satou</td>
+                    <td>02929</td>
+                    <td>
+                      <span class="label bg-green shadow-style">Active</span>
+                    </td>
+                    <td>20/11/21 08:17</td>
+                    <td>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">mode_edit</i>
+                      </button>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user4.jpg" alt="">
+                    </td>
+                    <td>Angelica Ramos</td>
+                    <td>99982</td>
+                    <td>
+                      <span class="label bg-green shadow-style">Active</span>
+                    </td>
+                    <td>20/11/21 08:17</td>
+                    <td>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">mode_edit</i>
+                      </button>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="table-img">
+                      <img src="assets/images/user/user5.jpg" alt="">
+                    </td>
+                    <td>Ashton Cox</td>
+                    <td>82824</td>
+                    <td>
+                      <span class="label bg-green shadow-style">Active</span>
+                    </td>
+                    <td>20/11/21 08:17</td>
+                    <td>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">mode_edit</i>
+                      </button>
+                      <button class="btn tblActnBtn">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #END# Task Info -->
+      <!-- Browser Usage -->
+      <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+        <div class="card">
+          <div class="header">
+            <h2>
+              <strong>Comandas Abertas </strong></h2>
+            <button mat-button [matMenuTriggerFor]="menu" class="header-dropdown">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+
+          </div>
+          <div class="body">
+            <div id="new-orders" class="media-list position-relative">
+              <div class="table-responsive">
+                <table id="new-orders-table" class="table table-hover table-xl mb-0">
+                  <thead>
+                    <tr>
+                      <th class="border-top-0">Comanda</th>
+                      <th class="border-top-0">Pedidos</th>
+                      <th class="border-top-0">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="text-truncate">9292</td>
+                      <td class="text-truncate">
+                        <ul class="list-unstyled order-list">
+                          <li class="avatar avatar-sm">
+                            <span class="badge">4</span>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="text-truncate">R$89.99</td>
+                    </tr>
+                    <tr>
+                      <td class="text-truncate">9123</td>
+                      <td class="text-truncate">
+                        <ul class="list-unstyled order-list">
+
+                          <li class="avatar avatar-sm">
+                            <span class="badge">2</span>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="text-truncate">R$55.50</td>
+                    </tr>
+                    <tr>
+                      <td class="text-truncate">8289</td>
+                      <td class="text-truncate">
+                        <ul class="list-unstyled order-list">
+                           <li class="avatar avatar-sm">
+                            <span class="badge">6</span>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="text-truncate">R$90.00</td>
+                    </tr>
+                    <tr>
+                      <td class="text-truncate">3123</td>
+                      <td class="text-truncate">
+                        <ul class="list-unstyled order-list">
+                          <li class="avatar avatar-sm">
+                            <span class="badge">4</span>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="text-truncate">R$75.00</td>
+                    </tr>
+                    <tr>
+                      <td class="text-truncate">92928</td>
+                      <td class="text-truncate">
+                        <ul class="list-unstyled order-list">
+
+                          <li class="avatar avatar-sm">
+                            <span class="badge">3</span>
+                          </li>
+                        </ul>
+                      </td>
+                      <td class="text-truncate">R$85.00</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- #END# Browser Usage -->
+    </div>
+  </div>
+</section>
